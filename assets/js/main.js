@@ -95,12 +95,6 @@ function fetchProjects() {
     dummyProjects.forEach((project, index) => {
         const imgPath = project.thumbnail_image ? `assets/images/uploads/${project.thumbnail_image}` : 'https://placehold.co/600x400/111/333?text=No+Image';
 
-        let techList = "";
-        if (project.technologies) {
-            const techArr = project.technologies.split(',');
-            techList = techArr.map(t => `<span class="badge">${t.trim()}</span>`).join('');
-        }
-
         let linksHtml = "";
         if (project.live_link) linksHtml += `<a href="${project.live_link}" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>`;
         if (project.github_link) linksHtml += `<a href="${project.github_link}" target="_blank" class="card-link"><i class="fab fa-github"></i></a>`;
@@ -113,7 +107,6 @@ function fetchProjects() {
                 <div class="card-body">
                     <h3 class="card-title">${project.title}</h3>
                     <p class="card-desc">${project.description.slice(0, 100)}${project.description.length > 100 ? '...' : ''}</p>
-                    <div class="tech-badges">${techList}</div>
                     <div class="card-links">${linksHtml}</div>
                 </div>
             </div>
@@ -135,7 +128,8 @@ function initScrollAnimations() {
         opacity: 0,
         duration: 0.8,
         stagger: 0.2,
-        ease: "power3.out"
+        ease: "power3.out",
+        clearProps: "all"
     });
 
     // Animate contact section

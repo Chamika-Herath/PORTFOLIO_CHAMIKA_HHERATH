@@ -277,6 +277,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    align-items: stretch;
 }
 
 .project-card {
@@ -329,23 +330,8 @@ section {
 .card-desc {
     color: var(--text-muted);
     font-size: 0.95rem;
-    margin-bottom: 20px;
-}
-
-.tech-badges {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
     margin-bottom: auto;
     padding-bottom: 25px;
-}
-
-.badge {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-color);
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
 }
 
 .card-links {
