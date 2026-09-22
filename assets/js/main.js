@@ -132,15 +132,29 @@ function initScrollAnimations() {
         clearProps: "all"
     });
 
+    // Animate skills entrance
+    gsap.from(".anim-skill", {
+        scrollTrigger: {
+            trigger: "#skills",
+            start: "top 80%",
+        },
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        clearProps: "all"
+    });
+
     // Animate contact section
-    gsap.from(".contact-content", {
+    gsap.from(".anim-contact", {
         scrollTrigger: {
             trigger: ".contact-section",
             start: "top 80%",
         },
-        y: 30,
+        y: 50,
         opacity: 0,
-        duration: 1,
+        duration: 0.8,
+        stagger: 0.2,
         ease: "power3.out"
     });
 }
